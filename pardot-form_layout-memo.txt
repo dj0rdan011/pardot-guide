@@ -1,0 +1,52 @@
+<!--お問い合わせフォーム　ここから-->
+<form accept-charset="UTF-8" method="post" action="%%form-action-url%%" class="form" id="pardot-form">
+%%form-opening-general-content%%
+
+%%form-if-thank-you%%
+    %%form-javascript-focus%%
+    %%form-thank-you-content%%
+	%%form-thank-you-code%%
+%%form-end-if-thank-you%%
+
+%%form-if-display-form%%
+
+<!--フォーム上部-->
+%%form-before-form-content%%
+<!--フォーム上部-->
+
+<div id="wrapper">
+%%form-if-error%%<p class="errors">下記エラーを修正してください</p>%%form-end-if-error%%
+
+%%form-start-loop-fields%%
+<!--%%form-field-label%%-->
+<p class="form-field %%form-field-css-classes%% %%form-field-class-type%% %%form-field-class-required%% %%form-field-class-hidden%% %%form-field-class-no-label%% %%form-field-class-error%% %%form-field-dependency-css%%">
+%%form-if-field-label%%<label class="field-label" for="%%form-field-id%%">%%form-field-label%%</label>%%form-end-if-field-label%%<!--項目名-->
+%%form-field-if-error%%<span class="error_message">%%form-field-error-message%%</span>%%form-field-end-if-error%%<!--エラーメッセージ-->
+%%form-field-input%%<!--入力項目-->
+%%form-if-field-description%%<span class="description">※ %%form-field-description%%</span>%%form-end-if-field-description%%<!--注意書き-->
+</p>
+<div id="error_for_%%form-field-id%%" style="display:none"></div>
+
+%%form-end-loop-fields%%
+
+%%form-spam-trap-field%%
+
+<!-- forces IE5-8 to correctly submit UTF8 content  -->
+<input name="_utf8" type="hidden" value="&#9731;" />
+
+<p class="submit">
+<input type="submit" accesskey="s" value="%%form-submit-button-text%%" %%form-submit-disabled%%/>
+</p>
+</div>
+
+<!--フォーム下部-->
+%%form-after-form-content%%
+<!--フォーム下部-->
+
+
+%%form-end-if-display-form%%
+%%form-javascript-link-target-top%%
+
+</form>
+<!--お問い合わせフォーム　ここまで-->
+
